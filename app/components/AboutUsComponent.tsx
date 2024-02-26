@@ -38,7 +38,7 @@ export default function AboutUsComponent(props: Props) {
 
   return (
     <div className="overflow-x-hidden">
-      <Navbar isHeaderShow={isHeaderShow} />
+      <Navbar isHeaderShow={isHeaderShow} activeTab={"aboutUs"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
           src="/homeImage3.webp"

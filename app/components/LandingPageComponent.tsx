@@ -43,7 +43,7 @@ export default function LandingPageComponent(props: Props) {
 
   return (
     <div className="overflow-x-hidden">
-      <Navbar isHeaderShow={isHeaderShow} />
+      <Navbar isHeaderShow={isHeaderShow} activeTab={"home"} />
       <Swiper
         navigation={true}
         autoplay={{

@@ -31,7 +31,7 @@ export default function LWTComponent(props: Props) {
 
   return (
     <div className="overflow-x-hidden">
-      <Navbar isHeaderShow={isHeaderShow} />
+      <Navbar isHeaderShow={isHeaderShow} activeTab={"lwt"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Get in touch today!

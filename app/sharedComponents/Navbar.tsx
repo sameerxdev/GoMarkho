@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 interface NavbarComponentInterface {
   isHeaderShow: any;
+  activeTab: any;
 }
 
 export default function Navbar(props: NavbarComponentInterface) {
@@ -14,6 +16,8 @@ export default function Navbar(props: NavbarComponentInterface) {
   const [isServiceMobOpen, setIsServiceMobOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
+  const [activeTab, setActiveTab] = useState("home");
+
   useEffect(() => {
     setStartAnimation(true);
   }, []);
@@ -44,51 +48,82 @@ export default function Navbar(props: NavbarComponentInterface) {
               setIsServiceMobOpen(!isServiceMobOpen);
             }}
           >
-            <p className="text-black text-lg">Services</p>
-            <Image
-              src="/dropdownBlack.webp"
-              alt="Logo"
-              height={300}
-              width={300}
-              className="w-[25px] h-[25px]"
-              style={
-                isServiceMobOpen
-                  ? { transform: "rotate(180deg)" }
-                  : { transform: "rotate(0deg)" }
-              }
+            <p
+              className="text-black text-lg"
+              style={{ color: isServiceMobOpen ? "#2AABE1" : "black" }}
+            >
+              Services
+            </p>
+            <IoMdArrowDropdown
+              className="transition duration-500"
+              style={{
+                fontSize: "24px",
+                transform: isServiceMobOpen ? "rotate(180deg)" : "rotate(0deg)",
+                color: isServiceMobOpen ? "#2AABE1" : "black",
+              }}
             />
           </div>
           {isServiceMobOpen ? (
             <div className="bg-white px-[5%]">
               <Link href={"/communicationSolutions"}>
-                <p className="text-base text-black py-3 border-b-2">
+                <p
+                  className={`text-base py-3 border-b-2 ${
+                    props.activeTab === "comSol"
+                      ? "text-[#2AABE1]"
+                      : "text-black"
+                  }`}
+                >
                   Communication Solutions
                 </p>
               </Link>
               <Link href={"/softwareDevelopment"}>
-                <p className="text-base text-black py-3 border-b-2">
+                <p
+                  className={`text-base py-3 border-b-2 ${
+                    props.activeTab === "softDev"
+                      ? "text-[#2AABE1]"
+                      : "text-black"
+                  }`}
+                >
                   Software Development
                 </p>
               </Link>
               <Link href={"/processAutomation"}>
-                <p className="text-base text-black py-3 border-b-2">
+                <p
+                  className={`text-base py-3 border-b-2 ${
+                    props.activeTab === "procAut"
+                      ? "text-[#2AABE1]"
+                      : "text-black"
+                  }`}
+                >
                   Process Automation
                 </p>
               </Link>
             </div>
           ) : null}
           <Link href={"/aboutUs"}>
-            <p className="text-black text-lg py-3 border-b-2 flex items-center">
+            <p
+              className={`text-lg py-3 border-b-2 flex items-center ${
+                props.activeTab === "aboutUs" ? "text-[#2AABE1]" : "text-black"
+              }`}
+            >
               About Us
             </p>
           </Link>
           <Link href={"/careers"}>
-            <p className="text-black text-lg py-3 border-b-2 flex items-center">
+            <p
+              className={`text-lg py-3 border-b-2 flex items-center ${
+                props.activeTab === "careers" ? "text-[#2AABE1]" : "text-black"
+              }`}
+            >
               Careers
             </p>
           </Link>
           <Link href={"/blogs"}>
-            <p className="text-black text-lg py-3 border-b-2 flex items-center">
+            <p
+              className={`text-lg py-3 border-b-2 flex items-center ${
+                props.activeTab === "blogs" ? "text-[#2AABE1]" : "text-black"
+              }`}
+            >
               Blogs
             </p>
           </Link>
@@ -145,15 +180,15 @@ export default function Navbar(props: NavbarComponentInterface) {
             >
               Services
               <span>
-                <Image
-                  src="/dropdownBlack.webp"
-                  alt="Icon"
-                  height={50}
-                  width={50}
+                <IoMdArrowDropdown
+                  className="transition duration-400"
                   style={{
-                    transform: `rotate(${isServicesOpen ? "180deg" : "0deg"})`,
+                    fontSize: "24px",
+                    transform: isServicesOpen
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                    color: isServicesOpen ? "#2AABE1" : "black",
                   }}
-                  className="h-5 w-auto"
                 />
               </span>
               {isServicesOpen && (
@@ -167,17 +202,35 @@ export default function Navbar(props: NavbarComponentInterface) {
                   }}
                 >
                   <Link href={"/communicationSolutions"}>
-                    <p className="text-[16px] text-black hover:text-[#2AABE1]">
+                    <p
+                      className={`text-[16px] ${
+                        props.activeTab === "comSol"
+                          ? "text-[#2AABE1]"
+                          : "text-black"
+                      } hover:text-[#2AABE1]`}
+                    >
                       Communication Solutions
                     </p>
                   </Link>
                   <Link href={"/softwareDevelopment"}>
-                    <p className="text-[16px] text-black hover:text-[#2AABE1]">
+                    <p
+                      className={`text-[16px] ${
+                        props.activeTab === "softDev"
+                          ? "text-[#2AABE1]"
+                          : "text-black"
+                      } hover:text-[#2AABE1]`}
+                    >
                       Software Development
                     </p>
                   </Link>
                   <Link href={"/processAutomation"}>
-                    <p className="text-[16px] text-black hover:text-[#2AABE1]">
+                    <p
+                      className={`text-[16px] ${
+                        props.activeTab === "procAut"
+                          ? "text-[#2AABE1]"
+                          : "text-black"
+                      } hover:text-[#2AABE1]`}
+                    >
                       Process Automation
                     </p>
                   </Link>
@@ -185,17 +238,33 @@ export default function Navbar(props: NavbarComponentInterface) {
               )}
             </p>
             <Link href={"/aboutUs"}>
-              <p className="text-base 2xl:text-lg font-semibold transition duration-500 hover:text-sky-500">
+              <p
+                className={`text-base 2xl:text-lg font-semibold transition duration-500 ${
+                  props.activeTab === "aboutUs"
+                    ? "text-[#2AABE1]"
+                    : "text-black"
+                } hover:text-[#2AABE1]`}
+              >
                 About Us
               </p>
             </Link>
             <Link href={"/careers"}>
-              <p className="text-base 2xl:text-lg font-semibold transition duration-500 hover:text-sky-500">
+              <p
+                className={`text-base 2xl:text-lg font-semibold transition duration-500 ${
+                  props.activeTab === "careers"
+                    ? "text-[#2AABE1]"
+                    : "text-black"
+                } hover:text-[#2AABE1]`}
+              >
                 Careers
               </p>
             </Link>
             <Link href={"/blogs"}>
-              <p className="text-base 2xl:text-lg font-semibold transition duration-500 hover:text-sky-500">
+              <p
+                className={`text-base 2xl:text-lg font-semibold transition duration-500 ${
+                  props.activeTab === "blogs" ? "text-[#2AABE1]" : "text-black"
+                } hover:text-[#2AABE1]`}
+              >
                 Blogs
               </p>
             </Link>
