@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
 
@@ -10,22 +10,23 @@ interface Props {}
 export default function CareersComponent(props: Props) {
   const [isHeaderShow, setIsHeaderShow] = useState(false);
   let lastScrollTop = 0;
+  const handleScroll = useCallback(() => {
+    const st = window.pageYOffset;
+    if (st < 10) {
+      setIsHeaderShow(false);
+    } else if (st > lastScrollTop) {
+      setIsHeaderShow(true);
+    } else {
+      setIsHeaderShow(true);
+    }
+  }, [lastScrollTop]); // Include lastScrollTop in the dependency array
+
   useEffect(() => {
-    const handleScroll = () => {
-      const st = window.pageYOffset;
-      if (st < 10) {
-        setIsHeaderShow(false);
-      } else if (st > lastScrollTop) {
-        setIsHeaderShow(true);
-      } else {
-        setIsHeaderShow(true);
-      }
-    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="overflow-x-hidden">
@@ -282,11 +283,11 @@ export default function CareersComponent(props: Props) {
         <div className="w-full border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col items-center gap-6 xl:gap-8">
           <div className="lg:w-[60%]">
             <p className="text-lg font-bold text-center">
-              Can't find the position you are looking for?
+              Can&apos;t find the position you are looking for?
             </p>
             <p className="text-base font-semibold text-center">
-              Don't worry, get in touch with us anyways, we are always looking
-              for great team members to join us.
+              Don&apos;t worry, get in touch with us anyways, we are always
+              looking for great team members to join us.
             </p>
           </div>
           <div>

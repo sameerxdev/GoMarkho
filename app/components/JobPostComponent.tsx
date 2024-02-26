@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
 
@@ -10,22 +10,24 @@ interface Props {}
 export default function JobPostComponent(props: Props) {
   const [isHeaderShow, setIsHeaderShow] = useState(false);
   let lastScrollTop = 0;
+
+  const handleScroll = useCallback(() => {
+    const st = window.pageYOffset;
+    if (st < 10) {
+      setIsHeaderShow(false);
+    } else if (st > lastScrollTop) {
+      setIsHeaderShow(true);
+    } else {
+      setIsHeaderShow(true);
+    }
+  }, [lastScrollTop]); // Include lastScrollTop in the dependency array
+
   useEffect(() => {
-    const handleScroll = () => {
-      const st = window.pageYOffset;
-      if (st < 10) {
-        setIsHeaderShow(false);
-      } else if (st > lastScrollTop) {
-        setIsHeaderShow(true);
-      } else {
-        setIsHeaderShow(true);
-      }
-    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="overflow-x-hidden">
@@ -184,7 +186,7 @@ export default function JobPostComponent(props: Props) {
         </p>
         <Link href={"/lwt"}>
           <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white">
-            Let's work Together
+            Let&apos;s work Together
           </button>
         </Link>
       </div>

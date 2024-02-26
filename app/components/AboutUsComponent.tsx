@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import { FaRegLightbulb } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
@@ -13,25 +13,28 @@ import Footer from "../sharedComponents/Footer";
 interface Props {}
 
 export default function AboutUsComponent(props: Props) {
-  const [isHeaderShow, setIsHeaderShow] = useState(false);
   const [counterOn, setCounterOn] = useState(false);
+
+  const [isHeaderShow, setIsHeaderShow] = useState(false);
   let lastScrollTop = 0;
+
+  const handleScroll = useCallback(() => {
+    const st = window.pageYOffset;
+    if (st < 10) {
+      setIsHeaderShow(false);
+    } else if (st > lastScrollTop) {
+      setIsHeaderShow(true);
+    } else {
+      setIsHeaderShow(true);
+    }
+  }, [lastScrollTop]); // Include lastScrollTop in the dependency array
+
   useEffect(() => {
-    const handleScroll = () => {
-      const st = window.pageYOffset;
-      if (st < 10) {
-        setIsHeaderShow(false);
-      } else if (st > lastScrollTop) {
-        setIsHeaderShow(true);
-      } else {
-        setIsHeaderShow(true);
-      }
-    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="overflow-x-hidden">
@@ -89,14 +92,14 @@ export default function AboutUsComponent(props: Props) {
               (VoIP), our expertise extends to encompass software development
               and intelligent automation. As a dynamic provider, we take pride
               in being the singular destination for businesses seeking to
-              optimize their communication infrastructure. Whether it's
+              optimize their communication infrastructure. Whether it&apos;s
               establishing robust VoIP systems for seamless and cost-effective
               voice communication, developing cutting-edge software solutions
               tailored to specific business objectives, or integrating
               intelligent automation to streamline workflows, our team of
               experts is committed to delivering high-quality, innovative, and
               customized services. We strive to empower businesses with the
-              tools and technologies necessary to thrive in today's dynamic
+              tools and technologies necessary to thrive in today&apos;s dynamic
               market landscape.
             </p>
           </div>
@@ -274,7 +277,7 @@ export default function AboutUsComponent(props: Props) {
         </p>
         <Link href={"/lwt"}>
           <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white">
-            Let's work Together
+            Let&apos;s work Together
           </button>
         </Link>
       </div>

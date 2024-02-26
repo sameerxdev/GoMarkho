@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
 
@@ -11,22 +11,23 @@ export default function LWTComponent(props: Props) {
   const [isHeaderShow, setIsHeaderShow] = useState(false);
   const [counterOn, setCounterOn] = useState(false);
   let lastScrollTop = 0;
+  const handleScroll = useCallback(() => {
+    const st = window.pageYOffset;
+    if (st < 10) {
+      setIsHeaderShow(false);
+    } else if (st > lastScrollTop) {
+      setIsHeaderShow(true);
+    } else {
+      setIsHeaderShow(true);
+    }
+  }, [lastScrollTop]); // Include lastScrollTop in the dependency array
+
   useEffect(() => {
-    const handleScroll = () => {
-      const st = window.pageYOffset;
-      if (st < 10) {
-        setIsHeaderShow(false);
-      } else if (st > lastScrollTop) {
-        setIsHeaderShow(true);
-      } else {
-        setIsHeaderShow(true);
-      }
-    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="overflow-x-hidden">
