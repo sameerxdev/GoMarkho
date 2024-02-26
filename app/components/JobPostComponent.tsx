@@ -30,7 +30,7 @@ export default function JobPostComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"jobPost"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -44,7 +44,7 @@ export default function JobPostComponent(props: Props) {
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Quality Assurance Engineer
         </p>
-        <p className="font-regular text-lg my-5">
+        <p className="font-regular text-lg my-5 font-roboto">
           Islamabad, Pakistan |{" "}
           <span className="text-[#2AABE1]">Full Time</span>
         </p>
@@ -55,10 +55,11 @@ export default function JobPostComponent(props: Props) {
           <div className="w-full flex flex-col md:flex-row justify-between md:items-center my-2 lg:px-4">
             <p className="font-black text-xl lg:text-3xl">About the role</p>
             <p className="text-sm lg:text-base text-[#797979]">
-              <span className="font-semibold">Posted</span> : 25 November, 2021
+              <span className="font-semibold font-roboto">Posted</span> : 25
+              November, 2021
             </p>
           </div>
-          <ul className="text-[#797979] list-disc space-y-3 my-2 px-4 py-5">
+          <ul className="text-[#797979] list-disc space-y-3 my-2 px-4 py-5 font-roboto">
             <li>
               Review, analyse and evaluate product code according to system
               specifications.
@@ -87,7 +88,7 @@ export default function JobPostComponent(props: Props) {
             </li>
           </ul>
           <p className="font-black text-xl lg:text-3xl px-4">Requirements</p>
-          <ul className="text-[#797979] list-disc space-y-3 px-4 py-5">
+          <ul className="text-[#797979] list-disc space-y-3 px-4 py-5 font-roboto">
             <li>
               BS/MS degree in Computer Science, Engineering, or a related field.
             </li>
@@ -114,13 +115,13 @@ export default function JobPostComponent(props: Props) {
           <p className="font-black text-xl lg:text-3xl my-2 px-4">
             Contact us!
           </p>
-          <p className="text-[#797979] px-4 py-5">
+          <p className="text-[#797979] px-4 py-5 font-roboto">
             Reach out to discuss the opportunity & send your answers to:
           </p>
           <div className="px-4 py-5 text-[#797979]">
             <p className="font-bold">Aman Khan</p>
-            <p>hr@gomarkho.com</p>
-            <p>+342 343 34676</p>
+            <p className="font-roboto">hr@gomarkho.com</p>
+            <p className="font-roboto">+342 343 34676</p>
           </div>
         </div>
       </div>
@@ -180,7 +181,7 @@ export default function JobPostComponent(props: Props) {
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center">
+        <p className="font-regular text-lg my-5 text-center font-roboto">
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>

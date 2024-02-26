@@ -6,12 +6,14 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-jakarta",
 });
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`
-      ${plus_Jakarta_Sans.className}`}>{children}</body>
+      <body className={`${plus_Jakarta_Sans.variable} ${roboto.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

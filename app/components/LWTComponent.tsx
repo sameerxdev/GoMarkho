@@ -30,13 +30,15 @@ export default function LWTComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"lwt"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Get in touch today!
         </p>
-        <p className="font-regular text-lg my-5">Please fill the form below</p>
+        <p className="font-regular text-lg my-5 font-roboto">
+          Please fill the form below
+        </p>
         <div className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 mb-4 lg:mb-8">
             <div className="w-full lg:w-[50%]">

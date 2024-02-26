@@ -29,7 +29,7 @@ export default function ProcAutComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"procAut"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -43,7 +43,7 @@ export default function ProcAutComponent(props: Props) {
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Process Automation
         </p>
-        <p className="font-regular text-lg text-[#797979] text-center my-5">
+        <p className="font-regular text-lg text-[#797979] text-center my-5 font-roboto">
           You need to free your teams from the drudgery of routine tasks to
           enhance your customer’s experience.
         </p>
@@ -65,7 +65,7 @@ export default function ProcAutComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2">
                 Cost Effective
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Automation may seems like an expensive project but in reality it
                 frees up employees for higher value work.
               </p>
@@ -85,7 +85,7 @@ export default function ProcAutComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Better User Experience
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Greater insight into your target audience allows you to offer
                 your consumers a more personalized experience.
               </p>
@@ -105,7 +105,7 @@ export default function ProcAutComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Improved Efficiency
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 It is a cost-effective option because it lets you leverage the
                 internet service you are already using.
               </p>
@@ -126,7 +126,7 @@ export default function ProcAutComponent(props: Props) {
         <p className="text-2xl xl:text-3xl font-bold mb-8">
           Our Automation Solutions
         </p>
-        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 font-roboto">
           <div className="w-full lg:w-[20%] flex flex-col gap-5">
             <div className="flex flex-col md:flex-row lg:flex-col gap-5">
               <div className="w-full md:w-[50%] lg:w-full flex flex-col justify-center items-center rounded-xl bg-[#F9F9F9] border-[#CBCBCB] border py-6 px-2">
@@ -193,7 +193,7 @@ export default function ProcAutComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Consultation</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Expert consultations tailor process automation solutions to your
                 unique business needs, ensuring optimal efficiency.
               </p>
@@ -211,7 +211,7 @@ export default function ProcAutComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Plan, Pilot, Scale</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Strategically plan and pilot-scale your automation initiatives
                 for seamless integration and maximum impact.
               </p>
@@ -229,7 +229,7 @@ export default function ProcAutComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Data Capture</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Efficiently capture and utilize crucial data with our advanced
                 automation processes, driving informed decision-making.
               </p>
@@ -240,7 +240,7 @@ export default function ProcAutComponent(props: Props) {
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center">
+        <p className="font-regular text-lg my-5 text-center font-roboto">
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>

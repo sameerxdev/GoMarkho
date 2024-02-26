@@ -42,7 +42,7 @@ export default function LandingPageComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"home"} />
       <Swiper
         navigation={true}
@@ -66,7 +66,7 @@ export default function LandingPageComponent(props: Props) {
             >
               <p className="text-5xl font-black">Elevate</p>
               <p className="text-4xl font-medium">Your Voice.</p>
-              <p className="text-lg xl:text-xl font-normal">
+              <p className="text-lg xl:text-xl font-normal font-roboto">
                 One-stop provider for all communication.
               </p>
               <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
@@ -90,7 +90,7 @@ export default function LandingPageComponent(props: Props) {
             >
               <p className="text-5xl font-black">Transforming </p>
               <p className="text-4xl font-medium">Communication Excellence</p>
-              <p className="text-lg xl:text-xl font-normal">
+              <p className="text-lg xl:text-xl font-normal font-roboto">
                 Revolutionize the way you connect and collaborate.
               </p>
               <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
@@ -124,10 +124,13 @@ export default function LandingPageComponent(props: Props) {
             </p>
           </div>
         </div>
-        <div className="w-full lg:w-[45%] flex flex-col" data-aos="fade-left">
+        <div
+          className="w-full lg:w-[45%] flex flex-col font-roboto"
+          data-aos="fade-left"
+        >
           <div className="w-full flex justify-center items-center border-b border-[#f3f3f3] relative">
             <div className="flex justify-center items-center absolute top-0 left-0 z-0">
-              <p className="text-outline text-4xl">01.</p>
+              <p className="text-outline text-4xl font-jakarta">01.</p>
             </div>
             <div className="flex flex-col gap-[6px] px-8 pt-10 pb-4 z-10">
               <p className="font-regular text-xl text-black">
@@ -151,7 +154,7 @@ export default function LandingPageComponent(props: Props) {
           </div>
           <div className="w-full flex justify-center items-center border-b border-[#f3f3f3] relative">
             <div className="flex justify-center items-center absolute top-0 left-0 z-0">
-              <p className="text-outline text-4xl">02.</p>
+              <p className="text-outline text-4xl font-jakarta">02.</p>
             </div>
             <div className="flex flex-col gap-[6px] px-8 pt-10 pb-4 z-10">
               <p className="font-regular text-xl text-black">
@@ -175,7 +178,7 @@ export default function LandingPageComponent(props: Props) {
           </div>
           <div className="w-full flex justify-center items-center relative">
             <div className="flex justify-center items-center absolute top-0 left-0 z-0">
-              <p className="text-outline text-4xl">03.</p>
+              <p className="text-outline text-4xl font-jakarta">03.</p>
             </div>
             <div className="flex flex-col gap-[6px] px-8 pt-10 pb-4 z-10">
               <p className="font-regular text-xl text-black">
@@ -236,7 +239,9 @@ export default function LandingPageComponent(props: Props) {
                 delay={0}
                 suffix="+"
               />
-              <p className="text-sm text-white font-light">Project Completed</p>
+              <p className="text-sm text-white font-light font-roboto">
+                Project Completed
+              </p>
             </div>
             <div className="text-center">
               <CountUp
@@ -247,7 +252,9 @@ export default function LandingPageComponent(props: Props) {
                 suffix="+"
                 className="text-sky-500 text-5xl font-semibold"
               />
-              <p className="text-sm text-white font-light">Clients Satisfied</p>
+              <p className="text-sm text-white font-light font-roboto">
+                Clients Satisfied
+              </p>
             </div>
             <div className="text-center project_counter">
               <CountUp
@@ -258,13 +265,13 @@ export default function LandingPageComponent(props: Props) {
                 suffix="+"
                 className="text-sky-500 text-5xl font-semibold"
               />
-              <p className="text-sm text-white font-light">
+              <p className="text-sm text-white font-light font-roboto">
                 Years of Experience
               </p>
             </div>
           </div>
           <div data-aos="fade-left">
-            <p className="text-base 2xl:text-lg bg-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-white px-8 py-3 rounded-full flex gap-5 items-center">
+            <p className="text-base font-roboto 2xl:text-lg bg-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-white px-8 py-3 rounded-full flex gap-5 items-center">
               About Us{" "}
               <Image
                 src="/arrowWhite.webp"
@@ -334,7 +341,7 @@ export default function LandingPageComponent(props: Props) {
           </div>
         </div>
         <div
-          className="flex flex-col lg:flex-row gap-8 xl:gap-12 relative"
+          className="flex flex-col lg:flex-row gap-8 xl:gap-12 relative font-roboto"
           data-aos="fade-up"
         >
           <Image

@@ -37,7 +37,7 @@ export default function AboutUsComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"aboutUs"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -57,7 +57,7 @@ export default function AboutUsComponent(props: Props) {
           style={{ rotate: "160deg" }}
         />
         <p className="text-3xl xl:text-5xl font-bold">About Our Company</p>
-        <p className="font-regular text-lg text-[#797979] my-5">
+        <p className="font-regular text-lg text-[#797979] my-5 font-roboto">
           Enabling a digital tomorrow
         </p>
         <div className="flex gap-2 md:gap-4 lg:gap-10 my-8 xl:w-[80%]">
@@ -85,7 +85,7 @@ export default function AboutUsComponent(props: Props) {
             <p className="text-2xl xl:text-3xl font-bold">What we do</p>
           </div>
           <div className="w-full lg:w-[70%] flex justify-start">
-            <p className="font-regular text-base text-[#797979]">
+            <p className="font-regular text-base text-[#797979] font-roboto">
               At GoMarkho, we specialize in offering a comprehensive suite of
               solutions designed to meet the diverse communication needs of
               businesses. With a profound focus on Voice over Internet Protocol
@@ -173,7 +173,7 @@ export default function AboutUsComponent(props: Props) {
           <p className="text-3xl xl:text-5xl font-bold text-white">
             Our Mission
           </p>
-          <p className="text-lg xl:text-xl text-white w-full lg:w-[80%] text-center lg:text-left">
+          <p className="text-lg xl:text-xl text-white w-full lg:w-[80%] text-center lg:text-left font-roboto">
             Enabling seamless, innovative communication solutions and
             transformative technologies, our mission is to empower businesses
             with tailored VoIP systems, cutting-edge software solutions, and
@@ -207,7 +207,7 @@ export default function AboutUsComponent(props: Props) {
               </div>
               <div>
                 <p className="text-lg text-black font-bold mb-1">Innovation</p>
-                <p className="text-sm font-regular text-[#797979]">
+                <p className="text-sm font-regular text-[#797979] font-roboto">
                   Innovation threads through our DNA, sparking creativity and
                   progress in every venture we undertake.
                 </p>
@@ -223,7 +223,7 @@ export default function AboutUsComponent(props: Props) {
               </div>
               <div>
                 <p className="text-lg text-black font-bold mb-1">Team work</p>
-                <p className="text-sm text-[#797979] font-regular">
+                <p className="text-sm text-[#797979] font-regular font-roboto">
                   Teamwork is our driving force, weaving diverse skills into a
                   tapestry of shared success and collective achievements.
                 </p>
@@ -241,7 +241,7 @@ export default function AboutUsComponent(props: Props) {
               </div>
               <div>
                 <p className="text-lg text-black font-bold mb-1">Integrity</p>
-                <p className="text-sm text-[#797979] font-regular">
+                <p className="text-sm text-[#797979] font-regular font-roboto">
                   In the spirit of true partnership, we want to do right by you
                   and that means we will advise and provide you with the
                   solutions we think are best for you.
@@ -258,7 +258,7 @@ export default function AboutUsComponent(props: Props) {
                 <p className="text-lg text-black font-bold mb-1">
                   Responsibility
                 </p>
-                <p className="text-sm text-[#797979] font-regular">
+                <p className="text-sm text-[#797979] font-regular font-roboto">
                   For us it is not about a one time sale, we will be your
                   technology partners and thus our approach to work in
                   action-oriented and result driven.
@@ -271,7 +271,7 @@ export default function AboutUsComponent(props: Props) {
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center">
+        <p className="font-regular text-lg my-5 text-center font-roboto">
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>

@@ -30,7 +30,7 @@ export default function BlogsComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"blogs"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -42,14 +42,14 @@ export default function BlogsComponent(props: Props) {
           style={{ rotate: "160deg" }}
         />
         <p className="text-3xl xl:text-5xl font-bold">News & Articles</p>
-        <p className="font-regular text-lg text-[#797979] my-5">
+        <p className="font-regular text-lg text-[#797979] my-5 font-roboto">
           Stay tuned for more updates!
         </p>
         <div className="flex flex-col gap-8 xl:gap-12">
           <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
             <div className="w-full lg:w-[50%] text-white bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
-                <p className="text-sm">November 15, 2022</p>
+                <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
               <div>
                 <p className="text-xl xl:text-2xl font-black">
@@ -57,7 +57,7 @@ export default function BlogsComponent(props: Props) {
                 </p>
               </div>
               <div>
-                <p className="text-base">
+                <p className="text-base font-roboto">
                   here we show an overview of our main topic. like what top 10
                   tips do in return of which is most easiest one, anything.
                 </p>
@@ -68,7 +68,7 @@ export default function BlogsComponent(props: Props) {
             </div>
             <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
-                <p className="text-sm">November 15, 2022</p>
+                <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
               <div>
                 <p className="text-xl xl:text-2xl font-black">
@@ -76,47 +76,7 @@ export default function BlogsComponent(props: Props) {
                 </p>
               </div>
               <div>
-                <p className="text-base">
-                  here we show an overview of our main topic. like what top 10
-                  tips do in return of which is most easiest one, anything.
-                </p>
-              </div>
-              <div>
-                <p className="text-[#2AABE1]">Read More</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
-              <div>
-                <p className="text-sm">November 15, 2022</p>
-              </div>
-              <div>
-                <p className="text-xl xl:text-2xl font-black">
-                  10 Top tips for making automation less time consuming
-                </p>
-              </div>
-              <div>
-                <p className="text-base">
-                  here we show an overview of our main topic. like what top 10
-                  tips do in return of which is most easiest one, anything.
-                </p>
-              </div>
-              <div>
-                <p className="text-[#2AABE1]">Read More</p>
-              </div>
-            </div>
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
-              <div>
-                <p className="text-sm">November 15, 2022</p>
-              </div>
-              <div>
-                <p className="text-xl xl:text-2xl font-black">
-                  10 Top tips for making automation less time consuming
-                </p>
-              </div>
-              <div>
-                <p className="text-base">
+                <p className="text-base font-roboto">
                   here we show an overview of our main topic. like what top 10
                   tips do in return of which is most easiest one, anything.
                 </p>
@@ -129,7 +89,7 @@ export default function BlogsComponent(props: Props) {
           <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
             <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
-                <p className="text-sm">November 15, 2022</p>
+                <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
               <div>
                 <p className="text-xl xl:text-2xl font-black">
@@ -137,7 +97,7 @@ export default function BlogsComponent(props: Props) {
                 </p>
               </div>
               <div>
-                <p className="text-base">
+                <p className="text-base font-roboto">
                   here we show an overview of our main topic. like what top 10
                   tips do in return of which is most easiest one, anything.
                 </p>
@@ -148,7 +108,7 @@ export default function BlogsComponent(props: Props) {
             </div>
             <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
-                <p className="text-sm">November 15, 2022</p>
+                <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
               <div>
                 <p className="text-xl xl:text-2xl font-black">
@@ -156,7 +116,47 @@ export default function BlogsComponent(props: Props) {
                 </p>
               </div>
               <div>
-                <p className="text-base">
+                <p className="text-base font-roboto">
+                  here we show an overview of our main topic. like what top 10
+                  tips do in return of which is most easiest one, anything.
+                </p>
+              </div>
+              <div>
+                <p className="text-[#2AABE1]">Read More</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+              <div>
+                <p className="text-sm font-roboto">November 15, 2022</p>
+              </div>
+              <div>
+                <p className="text-xl xl:text-2xl font-black">
+                  10 Top tips for making automation less time consuming
+                </p>
+              </div>
+              <div>
+                <p className="text-base font-roboto">
+                  here we show an overview of our main topic. like what top 10
+                  tips do in return of which is most easiest one, anything.
+                </p>
+              </div>
+              <div>
+                <p className="text-[#2AABE1]">Read More</p>
+              </div>
+            </div>
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+              <div>
+                <p className="text-sm font-roboto">November 15, 2022</p>
+              </div>
+              <div>
+                <p className="text-xl xl:text-2xl font-black">
+                  10 Top tips for making automation less time consuming
+                </p>
+              </div>
+              <div>
+                <p className="text-base font-roboto">
                   here we show an overview of our main topic. like what top 10
                   tips do in return of which is most easiest one, anything.
                 </p>

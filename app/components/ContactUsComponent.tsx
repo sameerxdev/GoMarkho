@@ -60,13 +60,13 @@ export default function ContactUsComponent(props: Props) {
     },
   ];
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"conatctUs"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <p className="text-3xl lg:text-4xl xl:text-5xl font-bold">
           Get in Touch Today!
         </p>
-        <div className="flex flex-col lg:flex-row w-full lg:w-[80%] items-center gap-5 mt-6 mb-10">
+        <div className="flex flex-col lg:flex-row w-full lg:w-[80%] items-center gap-5 mt-6 mb-10 font-roboto">
           <div className="w-full lg:w-[50%] flex items-center justify-between p-3 md:p-4 border border-[#e8e8e8] shadow-xl rounded-xl">
             <div className="flex gap-2 justify-start items-center">
               <div className="bg-[#146C94] flex justify-center items-center p-3 rounded-xl">
@@ -167,7 +167,7 @@ export default function ContactUsComponent(props: Props) {
           <p className="text-white font-extrabold text-xl lg:text-3xl py-4">
             Frequently Asked Questions
           </p>
-          <ul className="w-full lg:w-[70%] space-y-4">
+          <ul className="w-full lg:w-[70%] space-y-4 font-roboto">
             {faqsArray.map((faq: any, index: any) => (
               <li
                 key={index}

@@ -9,7 +9,7 @@ interface FooterComponentInterface {}
 
 export default function Footer(props: FooterComponentInterface) {
   return (
-    <div className="flex flex-col lg:flex-row gap-2 items-center justify-center w-full bg-[#020332] h-[calc(80vh)] lg:h-[calc(40vh)] px-[5%] xl:px-[8%]">
+    <div className="flex flex-col lg:flex-row gap-2 items-center justify-center w-full bg-[#020332] h-[calc(80vh)] lg:h-[calc(40vh)] px-[5%] xl:px-[8%] font-roboto">
       <div className="w-full lg:w-[33%] flex justify-between items-center h-full lg:mr-4 mt-4 lg:mt-0">
         <div className="flex flex-col gap-3">
           <p className="text-white font-semibold text-sm">Home</p>
@@ -78,8 +78,10 @@ export default function Footer(props: FooterComponentInterface) {
       </div>
       <div className="w-full lg:w-[33%] flex justify-start items-start lg:items-center relative h-full">
         <div className="flex flex-col gap-3">
-          <p className="text-white font-semibold text-sm">Have any Questions</p>
-          <button className="text-base 2xl:text-lg border border-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-[#2AABE1] px-3 py-1 rounded-full">
+          <p className="text-white font-semibold text-sm font-roboto">
+            Have any Questions
+          </p>
+          <button className="text-base 2xl:text-lg border border-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-[#2AABE1] px-3 py-1 rounded-full font-roboto">
             Get in Touch
           </button>
         </div>

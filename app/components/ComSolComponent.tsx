@@ -30,7 +30,7 @@ export default function ComSolComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"comSol"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -44,7 +44,7 @@ export default function ComSolComponent(props: Props) {
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Communication Solution
         </p>
-        <p className="font-regular text-lg text-[#797979] text-center my-5">
+        <p className="font-regular text-lg text-[#797979] text-center my-5 font-roboto">
           Effective communication is the secret that lies at the heart of every
           successful business.
         </p>
@@ -66,7 +66,7 @@ export default function ComSolComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2">
                 Cost Effective
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 VoIP is a cost-effective option because it lets you leverage the
                 internet service you are already using.
               </p>
@@ -84,7 +84,7 @@ export default function ComSolComponent(props: Props) {
             </div>
             <div className="flex flex-col items-center h-[67%]">
               <p className="font-semibold text-lg xl:text-xl mb-2">Flexible</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 VoIP solutions allow you to integrate critical communications
                 tools, such as video conferencing.
               </p>
@@ -102,7 +102,7 @@ export default function ComSolComponent(props: Props) {
             </div>
             <div className="flex flex-col items-center h-[67%]">
               <p className="font-semibold text-lg xl:text-xl mb-2">Reliable</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 VoIP solutions help maintain business continuity by forwarding
                 calls to preset numbers in case of any untoward incident.
               </p>
@@ -121,7 +121,7 @@ export default function ComSolComponent(props: Props) {
           style={{ rotate: "160deg" }}
         />
         <p className="text-2xl xl:text-3xl font-bold mb-8">Benefits of VoIP</p>
-        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 font-roboto">
           <div className="w-full lg:w-[20%] flex flex-col gap-5">
             <div className="flex flex-col md:flex-row lg:flex-col gap-5">
               <div className="w-full md:w-[50%] lg:w-full flex flex-col justify-center items-center rounded-xl bg-[#F9F9F9] border-[#CBCBCB] border py-6 px-2">
@@ -211,7 +211,7 @@ export default function ComSolComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Secured Platform</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 We make sure every system we make stay safe for users as well as
                 customers, as security is our key component.
               </p>
@@ -231,7 +231,7 @@ export default function ComSolComponent(props: Props) {
               <p className="font-bold text-lg xl:text-xl">
                 Unlimited Scalability
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 We provide multiple iterations and leave space for scalability
                 in future maintenance phases.
               </p>
@@ -249,7 +249,7 @@ export default function ComSolComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Automated calls</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 It involves auto attendant, calling in business hours, block
                 calls, voicemails, call transfer, call recording and monitoring,
                 etc.
@@ -261,7 +261,7 @@ export default function ComSolComponent(props: Props) {
 
       <div className="h-[calc(60vh)] lg:h-[calc(80vh)] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center">
+        <p className="font-regular text-lg my-5 text-center font-roboto">
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>

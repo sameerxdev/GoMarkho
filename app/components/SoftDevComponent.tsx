@@ -29,7 +29,7 @@ export default function SoftDevComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"softDev"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -43,9 +43,9 @@ export default function SoftDevComponent(props: Props) {
         <p className="text-3xl xl:text-5xl font-bold text-center">
           Software Development
         </p>
-        <p className="font-regular text-lg text-[#797979] text-center my-5">
+        <p className="font-regular text-lg text-[#797979] text-center my-5 font-roboto">
           Any business that aims to offer a personalized services needs to cater
-          to its own specific needs first.”
+          to its own specific needs first.
         </p>
         <p className="text-2xl xl:text-3xl font-bold mt-12 mb-8 text-center">
           Benefits of Custom Software Solutions
@@ -65,7 +65,7 @@ export default function SoftDevComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Cost Effective
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Custom solutions are a smart investment. They save you from the
                 hassle of investing in multiple partially suitable software
                 purchases.
@@ -86,7 +86,7 @@ export default function SoftDevComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Scalability
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Businesses grow and their processes become more complex. This
                 can be too much to handle for off-the-shelf solutions.
               </p>
@@ -106,7 +106,7 @@ export default function SoftDevComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Security
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 A public software is available to everyone and is an easy target
                 for hackers, while a custom-developed software is harder for
                 hackers.
@@ -127,7 +127,7 @@ export default function SoftDevComponent(props: Props) {
               <p className="font-semibold text-lg xl:text-xl mb-2 text-center">
                 Efficiency
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Using a software that is designed to cater to your needs will
                 enable your team to perform tasks faster and more efficiently.
               </p>
@@ -148,7 +148,7 @@ export default function SoftDevComponent(props: Props) {
         <p className="text-2xl xl:text-3xl font-bold mb-8">
           Our Software Solutions
         </p>
-        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 font-roboto">
           <div className="w-full lg:w-[20%] flex flex-col gap-5">
             <div className="flex flex-col md:flex-row lg:flex-col gap-5">
               <div className="w-full md:w-[50%] lg:w-full flex flex-col justify-center items-center rounded-xl bg-[#F9F9F9] border-[#CBCBCB] border py-6 px-2">
@@ -230,7 +230,7 @@ export default function SoftDevComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">Task Management</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Effortlessly organize and track tasks with our intuitive task
                 management feature, streamlining project workflows.
               </p>
@@ -250,7 +250,7 @@ export default function SoftDevComponent(props: Props) {
               <p className="font-bold text-lg xl:text-xl">
                 Financial Management
               </p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Empower financial control and transparency with our
                 comprehensive financial management tools, ensuring precision in
                 financial operations.
@@ -269,7 +269,7 @@ export default function SoftDevComponent(props: Props) {
             </div>
             <div className="h-[40%] flex flex-col gap-1 justify-center items-center">
               <p className="font-bold text-lg xl:text-xl">ERP Systems</p>
-              <p className="font-regular text-[#666666] text-sm text-center">
+              <p className="font-regular text-[#666666] text-sm text-center font-roboto">
                 Experience seamless integration and optimization of your
                 business processes through our robust ERP systems, enhancing
                 overall efficiency and coordination.
@@ -281,7 +281,7 @@ export default function SoftDevComponent(props: Props) {
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center">
+        <p className="font-regular text-lg my-5 text-center font-roboto">
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>

@@ -29,7 +29,7 @@ export default function CareersComponent(props: Props) {
   }, [handleScroll]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"careers"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
         <Image
@@ -41,7 +41,7 @@ export default function CareersComponent(props: Props) {
           style={{ rotate: "160deg" }}
         />
         <p className="text-3xl xl:text-5xl font-bold">Careers</p>
-        <p className="font-regular text-lg text-[#797979] my-5">
+        <p className="font-regular text-lg text-[#797979] my-5 font-roboto">
           Take your career to the next level
         </p>
         <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-60 my-5 text-white">
@@ -82,7 +82,7 @@ export default function CareersComponent(props: Props) {
           <p className="text-2xl lg:text-3xl 2xl:text-4xl font-bold mb-4">
             We are from the people
           </p>
-          <p className="font-regular text-base lg:text-lg xl:text-xl text-[#797979] w-[60%] md:w-full">
+          <p className="font-regular text-base lg:text-lg xl:text-xl text-[#797979] w-[60%] md:w-full font-roboto">
             We are a team of 50+ people – with a purpose to thrive in our
             value-driven culture and make a real and lasting difference to the
             organization and their careers.
@@ -101,7 +101,7 @@ export default function CareersComponent(props: Props) {
 
       <div className="w-[calc(100vw)] px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold">Career Trackers</p>
-        <p className="font-regular text-lg my-5 text-center lg:w-[60%] text-[#797979]">
+        <p className="font-regular text-lg my-5 text-center lg:w-[60%] text-[#797979] font-roboto">
           Techies, innovators, developers, and free-thinkers… you’ve come to the
           right place. Whether you’re an experienced professional or a recent
           graduate, working with GoMarkho will give you opportunities to excel
@@ -149,13 +149,13 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] text-white bg-[#020332] rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Web Designer & Developer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan | Part Time
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -172,13 +172,13 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Front-end developer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan | Part Time
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -196,14 +196,14 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Quality Assurance Engineer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan |{" "}
                 <span className="text-[#2AABE1]">Full Time</span>
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -217,14 +217,14 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">UI / UX Designer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan |{" "}
                 <span className="text-[#2AABE1]">Full Time</span>
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -240,14 +240,14 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Backend Developer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan |{" "}
                 <span className="text-[#2AABE1]">Full Time</span>
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -261,14 +261,14 @@ export default function CareersComponent(props: Props) {
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Devops Engineer</p>
-              <p className="text-base font-semibold">
+              <p className="text-base font-semibold font-roboto">
                 {" "}
                 Islamabad, Pakistan |{" "}
                 <span className="text-[#2AABE1]">Full Time</span>
               </p>
             </div>
             <div>
-              <p className="text-base">
+              <p className="text-base font-roboto">
                 It is a long established fact that a reader will be distracted
                 by the readable. Lorem Ipsum looking at it layout.
               </p>
@@ -285,7 +285,7 @@ export default function CareersComponent(props: Props) {
             <p className="text-lg font-bold text-center">
               Can&apos;t find the position you are looking for?
             </p>
-            <p className="text-base font-semibold text-center">
+            <p className="text-base font-semibold text-center font-roboto">
               Don&apos;t worry, get in touch with us anyways, we are always
               looking for great team members to join us.
             </p>
@@ -324,7 +324,7 @@ export default function CareersComponent(props: Props) {
             />
             <p className="text-2xl font-medium">01</p>
             <p className="text-sm font-bold">APPLY</p>
-            <p className="font-regular text-xs lg:text-sm text-center">
+            <p className="font-regular text-xs lg:text-sm text-center font-roboto">
               Please browse through the job openings and submit your application
               for positions that match your skillset.
             </p>
@@ -339,7 +339,7 @@ export default function CareersComponent(props: Props) {
             />
             <p className="text-2xl font-medium">02</p>
             <p className="text-sm font-bold">Review</p>
-            <p className="font-regular text-xs lg:text-sm text-center">
+            <p className="font-regular text-xs lg:text-sm text-center font-roboto">
               Our recruiters will review your application and match you with the
               best-fit opportunity.
             </p>
@@ -354,7 +354,7 @@ export default function CareersComponent(props: Props) {
             />
             <p className="text-2xl font-medium">03</p>
             <p className="text-sm font-bold">Interviews</p>
-            <p className="font-regular text-xs lg:text-sm text-center">
+            <p className="font-regular text-xs lg:text-sm text-center font-roboto">
               Our interviewing process is competency-based, designed to identify
               individuals thrive.
             </p>
@@ -369,7 +369,7 @@ export default function CareersComponent(props: Props) {
             />
             <p className="text-2xl font-medium">04</p>
             <p className="text-sm font-bold">Onboarding</p>
-            <p className="font-regular text-xs lg:text-sm text-center">
+            <p className="font-regular text-xs lg:text-sm text-center font-roboto">
               Our onboarding process will refine and prepare you for your
               professional journey with GoMarkho.
             </p>
