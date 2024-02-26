@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
@@ -22,6 +24,9 @@ export default function CareersComponent(props: Props) {
   }, [lastScrollTop]); // Include lastScrollTop in the dependency array
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -40,11 +45,19 @@ export default function CareersComponent(props: Props) {
           className="absolute right-[-100px] h-[25%] w-auto -z-10"
           style={{ rotate: "160deg" }}
         />
-        <p className="text-3xl xl:text-5xl font-bold">Careers</p>
-        <p className="font-regular text-lg text-[#797979] my-5 font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          Careers
+        </p>
+        <p
+          className="font-regular text-lg text-[#797979] my-5 font-roboto"
+          data-aos="fade-down"
+        >
           Take your career to the next level
         </p>
-        <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-60 my-5 text-white">
+        <button
+          className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-60 my-5 text-white"
+          data-aos="fade-down"
+        >
           Browse Open Positions
         </button>
         <div className="flex gap-5 lg:gap-10 my-8 w-full lg:w-[80%]">
@@ -55,6 +68,7 @@ export default function CareersComponent(props: Props) {
               height={1000}
               width={1000}
               className="w-full h-auto"
+              data-aos="fade-right"
             />
           </div>
           <div className="basis-1/2">
@@ -64,6 +78,7 @@ export default function CareersComponent(props: Props) {
               height={1000}
               width={1000}
               className="w-full h-auto"
+              data-aos="fade-left"
             />
           </div>
         </div>
@@ -78,7 +93,10 @@ export default function CareersComponent(props: Props) {
           className="absolute left-[-100px] h-[30%] w-auto -z-10"
           style={{ rotate: "-20deg" }}
         />
-        <div className="w-full md:w-[50%] flex flex-col px-[5%] lg:px-[8%] xl:px-[10%] justify-center mb-4 md:mb-0">
+        <div
+          className="w-full md:w-[50%] flex flex-col px-[5%] lg:px-[8%] xl:px-[10%] justify-center mb-4 md:mb-0"
+          data-aos="fade-right"
+        >
           <p className="text-2xl lg:text-3xl 2xl:text-4xl font-bold mb-4">
             We are from the people
           </p>
@@ -100,14 +118,22 @@ export default function CareersComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold">Career Trackers</p>
-        <p className="font-regular text-lg my-5 text-center lg:w-[60%] text-[#797979] font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          Career Trackers
+        </p>
+        <p
+          className="font-regular text-lg my-5 text-center lg:w-[60%] text-[#797979] font-roboto"
+          data-aos="fade-down"
+        >
           Techies, innovators, developers, and free-thinkers… you’ve come to the
           right place. Whether you’re an experienced professional or a recent
           graduate, working with GoMarkho will give you opportunities to excel
           and achieve the global recognition that you deserve!
         </p>
-        <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
+        <div
+          className="flex flex-col lg:flex-row gap-8 xl:gap-12"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[33%] flex flex-col items-center">
             <Image
               src="/careerImage4.webp"
@@ -142,10 +168,16 @@ export default function CareersComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] px-[5%] xl:px-[8%] py-[8%] flex flex-col gap-8 xl:gap-12 items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold text-center">
+        <p
+          className="text-3xl xl:text-5xl font-bold text-center"
+          data-aos="fade-down"
+        >
           Current Job Open Positions
         </p>
-        <div className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12">
+        <div
+          className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[50%] text-white bg-[#020332] rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Web Designer & Developer</p>
@@ -192,7 +224,10 @@ export default function CareersComponent(props: Props) {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12">
+        <div
+          className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Quality Assurance Engineer</p>
@@ -236,7 +271,10 @@ export default function CareersComponent(props: Props) {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12">
+        <div
+          className="w-full flex flex-col lg:flex-row gap-8 xl:gap-12"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[50%] border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col gap-6 xl:gap-8">
             <div>
               <p className="text-lg font-bold">Backend Developer</p>
@@ -280,7 +318,10 @@ export default function CareersComponent(props: Props) {
             </div>
           </div>
         </div>
-        <div className="w-full border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col items-center gap-6 xl:gap-8">
+        <div
+          className="w-full border-2 border-[#cccccc] text-black bg-white rounded-xl p-5 xl:p-8 flex flex-col items-center gap-6 xl:gap-8"
+          data-aos="fade-up"
+        >
           <div className="lg:w-[60%]">
             <p className="text-lg font-bold text-center">
               Can&apos;t find the position you are looking for?
@@ -307,14 +348,23 @@ export default function CareersComponent(props: Props) {
           className="absolute right-[-300px] md:right-[-250px] lg:right-[-100px] top-0 h-[30%] w-auto -z-10"
           style={{ rotate: "-160deg" }}
         />
-        <p className="font-regular text-base text-[#797979]">
+        <p
+          className="font-regular text-base text-[#797979]"
+          data-aos="fade-right"
+        >
           OUR HIRING PROCESS
         </p>
-        <p className="text-2xl xl:text-5xl font-bold mb-8">
+        <p
+          className="text-2xl xl:text-5xl font-bold mb-8"
+          data-aos="fade-right"
+        >
           As simple as it could be
         </p>
         <div className="w-full flex flex-col lg:flex-row items-center lg:justify-evenly gap-8 text-black">
-          <div className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5">
+          <div
+            className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5"
+            data-aos="zoom-in"
+          >
             <Image
               src="/hiring_process1_svg.webp"
               alt="Icon"
@@ -329,7 +379,10 @@ export default function CareersComponent(props: Props) {
               for positions that match your skillset.
             </p>
           </div>
-          <div className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5">
+          <div
+            className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5"
+            data-aos="zoom-in"
+          >
             <Image
               src="/hiring_process2_svg.webp"
               alt="Icon"
@@ -344,7 +397,10 @@ export default function CareersComponent(props: Props) {
               best-fit opportunity.
             </p>
           </div>
-          <div className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5">
+          <div
+            className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5"
+            data-aos="zoom-in"
+          >
             <Image
               src="/hiring_process3_svg.webp"
               alt="Icon"
@@ -359,7 +415,10 @@ export default function CareersComponent(props: Props) {
               individuals thrive.
             </p>
           </div>
-          <div className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5">
+          <div
+            className="w-[70%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-80 rounded-full border border-[#cccccc] flex flex-col items-center justify-center gap-4 py-16 px-5"
+            data-aos="zoom-in"
+          >
             <Image
               src="/hiring_process4_svg.webp"
               alt="Icon"

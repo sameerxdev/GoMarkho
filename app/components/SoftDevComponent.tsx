@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
@@ -22,6 +24,9 @@ export default function SoftDevComponent(props: Props) {
   }, [lastScrollTop]); // Include lastScrollTop in the dependency array
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -40,17 +45,29 @@ export default function SoftDevComponent(props: Props) {
           className="absolute right-[-130px] lg:right-[-100px] top-[100px] h-[15%] lg:h-[25%] w-auto -z-10"
           style={{ rotate: "20deg" }}
         />
-        <p className="text-3xl xl:text-5xl font-bold text-center">
+        <p
+          className="text-3xl xl:text-5xl font-bold text-center"
+          data-aos="fade-down"
+        >
           Software Development
         </p>
-        <p className="font-regular text-lg text-[#797979] text-center my-5 font-roboto">
+        <p
+          className="font-regular text-lg text-[#797979] text-center my-5 font-roboto"
+          data-aos="fade-down"
+        >
           Any business that aims to offer a personalized services needs to cater
           to its own specific needs first.
         </p>
-        <p className="text-2xl xl:text-3xl font-bold mt-12 mb-8 text-center">
+        <p
+          className="text-2xl xl:text-3xl font-bold mt-12 mb-8 text-center"
+          data-aos="fade-up"
+        >
           Benefits of Custom Software Solutions
         </p>
-        <div className="w-full flex flex-col lg:flex-row gap-6 xl:gap-12 items-center lg:justify-center relative">
+        <div
+          className="w-full flex flex-col lg:flex-row gap-6 xl:gap-12 items-center lg:justify-center relative"
+          data-aos="fade-up"
+        >
           <div className="w-full h-72 lg:w-[25%] px-5 py-8 bg-[#f9f9f9] border border-[#cbcbcb] flex flex-col items-center gap-4 rounded-xl">
             <div className="flex justify-center items-center h-[33%]">
               <Image
@@ -145,11 +162,14 @@ export default function SoftDevComponent(props: Props) {
           className="absolute left-[-120px] md:left-[-80px] lg:left-[-100px] top-0 h-[20%] lg:h-[25%] w-auto -z-10"
           style={{ rotate: "160deg" }}
         />
-        <p className="text-2xl xl:text-3xl font-bold mb-8">
+        <p className="text-2xl xl:text-3xl font-bold mb-8" data-aos="fade-down">
           Our Software Solutions
         </p>
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 font-roboto">
-          <div className="w-full lg:w-[20%] flex flex-col gap-5">
+          <div
+            className="w-full lg:w-[20%] flex flex-col gap-5"
+            data-aos="fade-right"
+          >
             <div className="flex flex-col md:flex-row lg:flex-col gap-5">
               <div className="w-full md:w-[50%] lg:w-full flex flex-col justify-center items-center rounded-xl bg-[#F9F9F9] border-[#CBCBCB] border py-6 px-2">
                 <Image
@@ -192,7 +212,10 @@ export default function SoftDevComponent(props: Props) {
             </div>
           </div>
           <div className="w-full lg:w-[80%] h-full flex justify-center items-center p-8 xl:p-12 bg-[#020332] rounded-xl">
-            <p className="text-white text-lg xl:text-xl font-regular py-10">
+            <p
+              className="text-white text-lg xl:text-xl font-regular py-10"
+              data-aos="fade-left"
+            >
               In a successful business, streamlined coordination of
               organizational functions is vital for efficiency. Recognizing
               this, GoMarkho offers custom software solutions tailored to
@@ -216,8 +239,13 @@ export default function SoftDevComponent(props: Props) {
           className="absolute right-[-100px] lg:right-[-100px] top-[100px] h-[10%] lg:h-[25%]  w-auto -z-10"
           style={{ rotate: "20deg" }}
         />
-        <p className="text-2xl xl:text-3xl font-bold mb-8">Key Features</p>
-        <div className="w-full flex flex-col lg:flex-row gap-6 xl:gap-12 items-center lg:justify-center relative">
+        <p className="text-2xl xl:text-3xl font-bold mb-8" data-aos="fade-down">
+          Key Features
+        </p>
+        <div
+          className="w-full flex flex-col lg:flex-row gap-6 xl:gap-12 items-center lg:justify-center relative"
+          data-aos="fade-up"
+        >
           <div className="w-full h-full lg:w-[33%] px-6 py-4 lg:py-8 flex flex-col items-center gap-2 rounded-xl">
             <div className="flex justify-center items-center h-[60%]">
               <Image
@@ -280,13 +308,21 @@ export default function SoftDevComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          How can we help you?
+        </p>
+        <p
+          className="font-regular text-lg my-5 text-center font-roboto"
+          data-aos="fade-down"
+        >
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>
         <Link href={"/lwt"}>
-          <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white">
+          <button
+            className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white"
+            data-aos="fade-up"
+          >
             Let&apos;s work Together
           </button>
         </Link>

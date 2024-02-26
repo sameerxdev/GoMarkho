@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
@@ -23,6 +25,9 @@ export default function JobPostComponent(props: Props) {
   }, [lastScrollTop]); // Include lastScrollTop in the dependency array
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -41,17 +46,29 @@ export default function JobPostComponent(props: Props) {
           className="absolute right-[-300px] lg:right-[-250px] top-[70px] h-[25%] w-auto -z-10"
           style={{ rotate: "20deg" }}
         />
-        <p className="text-3xl xl:text-5xl font-bold text-center">
+        <p
+          className="text-3xl xl:text-5xl font-bold text-center"
+          data-aos="fade-down"
+        >
           Quality Assurance Engineer
         </p>
-        <p className="font-regular text-lg my-5 font-roboto">
+        <p
+          className="font-regular text-lg my-5 font-roboto"
+          data-aos="fade-down"
+        >
           Islamabad, Pakistan |{" "}
           <span className="text-[#2AABE1]">Full Time</span>
         </p>
-        <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-60 my-5 text-white">
+        <button
+          className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-60 my-5 text-white"
+          data-aos="fade-down"
+        >
           Apply Now
         </button>
-        <div className="my-8 w-full bg-[#F9F9F9] px-4 lg:px-8 py-8 lg:py-12 rounded-xl">
+        <div
+          className="my-8 w-full bg-[#F9F9F9] px-4 lg:px-8 py-8 lg:py-12 rounded-xl"
+          data-aos="fade-up"
+        >
           <div className="w-full flex flex-col md:flex-row justify-between md:items-center my-2 lg:px-4">
             <p className="font-black text-xl lg:text-3xl">About the role</p>
             <p className="text-sm lg:text-base text-[#797979]">
@@ -127,7 +144,10 @@ export default function JobPostComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
-        <div className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12 bg-[#020332] text-white">
+        <div
+          className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12 bg-[#020332] text-white"
+          data-aos="fade-up"
+        >
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 mb-4 lg:mb-8">
             <div className="w-full lg:w-[50%]">
               <p className="text-lg font-medium mb-2">Full name *</p>
@@ -180,13 +200,21 @@ export default function JobPostComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          How can we help you?
+        </p>
+        <p
+          className="font-regular text-lg my-5 text-center font-roboto"
+          data-aos="fade-down"
+        >
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>
         <Link href={"/lwt"}>
-          <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white">
+          <button
+            className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white"
+            data-aos="fade-up"
+          >
             Let&apos;s work Together
           </button>
         </Link>

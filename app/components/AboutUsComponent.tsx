@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import { FaRegLightbulb } from "react-icons/fa";
@@ -30,6 +32,9 @@ export default function AboutUsComponent(props: Props) {
   }, [lastScrollTop]); // Include lastScrollTop in the dependency array
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -56,8 +61,13 @@ export default function AboutUsComponent(props: Props) {
           className="absolute right-[-240px] md:right-[-200px] h-[20%] w-auto -z-10"
           style={{ rotate: "160deg" }}
         />
-        <p className="text-3xl xl:text-5xl font-bold">About Our Company</p>
-        <p className="font-regular text-lg text-[#797979] my-5 font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          About Our Company
+        </p>
+        <p
+          className="font-regular text-lg text-[#797979] my-5 font-roboto"
+          data-aos="fade-down"
+        >
           Enabling a digital tomorrow
         </p>
         <div className="flex gap-2 md:gap-4 lg:gap-10 my-8 xl:w-[80%]">
@@ -68,6 +78,7 @@ export default function AboutUsComponent(props: Props) {
               height={1000}
               width={1000}
               className="w-full h-48 md:h-72 lg:h-96"
+              data-aos="fade-right"
             />
           </div>
           <div className="basis-2/5">
@@ -77,15 +88,21 @@ export default function AboutUsComponent(props: Props) {
               height={1000}
               width={1000}
               className="w-auto h-48 md:h-72 lg:h-96"
+              data-aos="fade-left"
             />
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 my-8 lg:w-[90%] xl:w-[80%]">
           <div className="w-full lg:w-[30%] flex justify-start">
-            <p className="text-2xl xl:text-3xl font-bold">What we do</p>
+            <p className="text-2xl xl:text-3xl font-bold" data-aos="fade-right">
+              What we do
+            </p>
           </div>
           <div className="w-full lg:w-[70%] flex justify-start">
-            <p className="font-regular text-base text-[#797979] font-roboto">
+            <p
+              className="font-regular text-base text-[#797979] font-roboto"
+              data-aos="fade-left"
+            >
               At GoMarkho, we specialize in offering a comprehensive suite of
               solutions designed to meet the diverse communication needs of
               businesses. With a profound focus on Voice over Internet Protocol
@@ -106,7 +123,10 @@ export default function AboutUsComponent(props: Props) {
         </div>
         <div className="flex flex-col lg:flex-row w-full items-center gap-8 lg:gap-0 my-8 bg-[#F9F9F9] p-3 md:p-5 rounded-xl">
           <div className="w-full lg:w-[50%] flex justify-between md:justify-evenly">
-            <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex flex-col items-center gap-2"
+              data-aos="zoom-in"
+            >
               <div className="flex">
                 <CountUp
                   className="text-black text-5xl font-semibold"
@@ -121,7 +141,10 @@ export default function AboutUsComponent(props: Props) {
                 Client Satisfaction
               </p>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex flex-col items-center gap-2"
+              data-aos="zoom-in"
+            >
               <div className="flex">
                 <CountUp
                   className="text-black text-5xl font-semibold"
@@ -138,7 +161,10 @@ export default function AboutUsComponent(props: Props) {
             </div>
           </div>
           <div className="w-full lg:w-[50%] flex justify-between md:justify-evenly">
-            <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex flex-col items-center gap-2"
+              data-aos="zoom-in"
+            >
               <div className="flex">
                 <CountUp
                   className="text-black text-5xl font-semibold"
@@ -151,7 +177,10 @@ export default function AboutUsComponent(props: Props) {
               </div>
               <p className="text-sm text-black font-bold">Sales Count</p>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div
+              className="flex flex-col items-center gap-2"
+              data-aos="zoom-in"
+            >
               <div className="flex">
                 <CountUp
                   className="text-black text-5xl font-semibold"
@@ -170,10 +199,16 @@ export default function AboutUsComponent(props: Props) {
 
       <div className="flex flex-col lg:flex-row py-[5%] w-[calc(100vw)] lg:h-[calc(90vh)]">
         <div className="h-full w-full lg:w-[70%] bg-[#020332] flex flex-col gap-8 justify-center lg:items-start items-center px-[5%] xl:px-[10%] py-[10%]">
-          <p className="text-3xl xl:text-5xl font-bold text-white">
+          <p
+            className="text-3xl xl:text-5xl font-bold text-white"
+            data-aos="fade-right"
+          >
             Our Mission
           </p>
-          <p className="text-lg xl:text-xl text-white w-full lg:w-[80%] text-center lg:text-left font-roboto">
+          <p
+            className="text-lg xl:text-xl text-white w-full lg:w-[80%] text-center lg:text-left font-roboto"
+            data-aos="fade-right"
+          >
             Enabling seamless, innovative communication solutions and
             transformative technologies, our mission is to empower businesses
             with tailored VoIP systems, cutting-edge software solutions, and
@@ -189,15 +224,22 @@ export default function AboutUsComponent(props: Props) {
             height={1000}
             width={1000}
             className="w-[90%] md:w-[70%] h-auto lg:h-[80%] xl:h-[90%] lg:w-auto lg:absolute left-[-80px]"
+            data-aos="fade-left"
           />
         </div>
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold text-center">
+        <p
+          className="text-3xl xl:text-5xl font-bold text-center"
+          data-aos="fade-down"
+        >
           The Story and Values behind our Company
         </p>
-        <div className="flex flex-col lg:flex-row w-full items-center gap-8 mt-8">
+        <div
+          className="flex flex-col lg:flex-row w-full items-center gap-8 mt-8"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[50%] flex bg-[#F9F9F9] rounded-xl p-4">
             <div className="flex items-center gap-2 md:gap-4">
               <div className="flex justify-center items-center bg-[#146c94] px-5 md:px-8 py-8 rounded-xl">
@@ -231,7 +273,10 @@ export default function AboutUsComponent(props: Props) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row w-full items-center gap-8 my-8">
+        <div
+          className="flex flex-col lg:flex-row w-full items-center gap-8 my-8"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-[50%] flex bg-[#F9F9F9] rounded-xl p-4">
             <div className="flex items-center gap-2 md:gap-4">
               <div className="flex justify-center items-center bg-[#146c94] px-5 md:px-8 py-8 rounded-xl">
@@ -270,13 +315,21 @@ export default function AboutUsComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
-        <p className="text-3xl xl:text-5xl font-bold">How can we help you?</p>
-        <p className="font-regular text-lg my-5 text-center font-roboto">
+        <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
+          How can we help you?
+        </p>
+        <p
+          className="font-regular text-lg my-5 text-center font-roboto"
+          data-aos="fade-down"
+        >
           Are you ready to push boundaries and explore new frontiers of
           innovation?
         </p>
         <Link href={"/lwt"}>
-          <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white">
+          <button
+            className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white"
+            data-aos="fade-up"
+          >
             Let&apos;s work Together
           </button>
         </Link>

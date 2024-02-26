@@ -5,6 +5,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import CountUp from "react-countup";
 import "../styles/style.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Footer from "../sharedComponents/Footer";
 import Map from "../sharedComponents/Map";
 
@@ -26,6 +28,9 @@ export default function ContactUsComponent(props: Props) {
   }, [lastScrollTop]); // Include lastScrollTop in the dependency array
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -63,10 +68,16 @@ export default function ContactUsComponent(props: Props) {
     <div className="overflow-x-hidden font-jakarta">
       <Navbar isHeaderShow={isHeaderShow} activeTab={"conatctUs"} />
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] pt-32 pb-16 flex flex-col items-center justify-center">
-        <p className="text-3xl lg:text-4xl xl:text-5xl font-bold">
+        <p
+          className="text-3xl lg:text-4xl xl:text-5xl font-bold"
+          data-aos="fade-down"
+        >
           Get in Touch Today!
         </p>
-        <div className="flex flex-col lg:flex-row w-full lg:w-[80%] items-center gap-5 mt-6 mb-10 font-roboto">
+        <div
+          className="flex flex-col lg:flex-row w-full lg:w-[80%] items-center gap-5 mt-6 mb-10 font-roboto"
+          data-aos="fade-down"
+        >
           <div className="w-full lg:w-[50%] flex items-center justify-between p-3 md:p-4 border border-[#e8e8e8] shadow-xl rounded-xl">
             <div className="flex gap-2 justify-start items-center">
               <div className="bg-[#146C94] flex justify-center items-center p-3 rounded-xl">
@@ -110,7 +121,10 @@ export default function ContactUsComponent(props: Props) {
             </div>
           </div>
         </div>
-        <div className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12">
+        <div
+          className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12"
+          data-aos="fade-up"
+        >
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 mb-4 lg:mb-8">
             <div className="w-full lg:w-[50%]">
               <p className="text-lg font-medium mb-2">Full name *</p>
@@ -164,10 +178,16 @@ export default function ContactUsComponent(props: Props) {
 
       <div className="py-[8%] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
         <div className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12 bg-[#020332] text-white flex flex-col items-center">
-          <p className="text-white font-extrabold text-xl lg:text-3xl py-4">
+          <p
+            className="text-white font-extrabold text-xl lg:text-3xl py-4"
+            data-aos="fade-down"
+          >
             Frequently Asked Questions
           </p>
-          <ul className="w-full lg:w-[70%] space-y-4 font-roboto">
+          <ul
+            className="w-full lg:w-[70%] space-y-4 font-roboto"
+            data-aos="fade-up"
+          >
             {faqsArray.map((faq: any, index: any) => (
               <li
                 key={index}
@@ -196,7 +216,10 @@ export default function ContactUsComponent(props: Props) {
       </div>
 
       <div className="py-[6%] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
-        <p className="text-black font-bold text-xl lg:text-3xl xl:text-4xl py-5">
+        <p
+          className="text-black font-bold text-xl lg:text-3xl xl:text-4xl py-5"
+          data-aos="fade-down"
+        >
           Find us here
         </p>
         <Map />
