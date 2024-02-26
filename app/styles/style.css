@@ -1,0 +1,59 @@
+.gradient-background {
+  background: linear-gradient(270deg, #161616, #2aabe1, #90e0ef, #000000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 240% 240%;
+  animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-outline {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #eee;
+  font-style: normal;
+  font-weight: 800;
+  color: transparent;
+  line-height: 150%;
+  /* 97.5px */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 2rem !important;
+  color: #fff;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-next {
+  right: 1.25rem !important;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-prev {
+  left: 1.25rem !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
