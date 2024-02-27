@@ -3,15 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useState, useEffect, useCallback } from "react";
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
 
 interface Props {}
 
 export default function JobPostComponent(props: Props) {
+  const { register, handleSubmit, reset } = useForm();
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [coverLetter, setCoverLetter] = useState("");
+  const [file, setFile] = useState<File | null>(null);
   const [isHeaderShow, setIsHeaderShow] = useState(false);
   let lastScrollTop = 0;
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleScroll = useCallback(() => {
     const st = window.pageYOffset;
@@ -33,6 +43,66 @@ export default function JobPostComponent(props: Props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+
+  // const sendEmail = (e: any) => {
+  //   e.preventDefault();
+  //   const templateParams = {
+  //     fullName: fullName,
+  //     email: email,
+  //     phone: phone,
+  //     coverLetter: coverLetter,
+  //     file: file ? file.name : "No file selected",
+  //   };
+
+  //   emailjs
+  //     .send(
+  //       "service_cdv4l3k",
+  //       "template_zjs0x6j",
+  //       templateParams,
+  //       "IsXKkS1NCYyD6Rhrk"
+  //     )
+  //     .then(
+  //       () => {
+  //         alert("Your email has been sent successfully.");
+  //         if (formRef.current) {
+  //           formRef.current.reset();
+  //         }
+  //         setFullName("");
+  //         setEmail("");
+  //         setPhone("");
+  //         setCoverLetter("");
+  //         setFile(null);
+  //       },
+  //       (error) => {
+  //         alert("An error occurred while sending the email.");
+  //       }
+  //     );
+  // };
+
+  const handleSendEmail = async (data: any) => {
+    console.log(data);
+    try {
+      console.log("Sending email");
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log("Response:", response);
+
+      if (response.ok) {
+        console.log(data, "Email sent successfully");
+        reset();
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error: any) {
+      console.error("Email sending error:", error);
+      // Handle the error, e.g., show an error message
+    }
+  };
 
   return (
     <div className="overflow-x-hidden font-jakarta">
@@ -144,8 +214,11 @@ export default function JobPostComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
-        <div
+        <form
+          ref={formRef}
           className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12 bg-[#020332] text-white"
+          // onSubmit={(e) => sendEmail(e)}
+          onSubmit={handleSubmit(handleSendEmail)}
           data-aos="fade-up"
         >
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 mb-4 lg:mb-8">
@@ -153,16 +226,22 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Full name *</p>
               <input
                 type="text"
+                {...register("fullName")}
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 placeholder="Enter Full Name"
-                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full"
+                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full text-black"
               />
             </div>
             <div className="w-full lg:w-[50%]">
               <p className="text-lg font-medium mb-2">Your email *</p>
               <input
-                type="text"
+                type="email"
+                {...register("email")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Email"
-                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full"
+                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full text-black"
               />
             </div>
           </div>
@@ -171,6 +250,8 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Resume *</p>
               <input
                 type="file"
+                // {...register("resume")}
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
                 placeholder="upload your resume"
                 className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full"
               />
@@ -179,24 +260,58 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Phone *</p>
               <input
                 type="text"
+                {...register("phone")}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 placeholder="Enter Phone"
-                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full"
+                className="p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full text-black"
               />
             </div>
           </div>
           <div className="w-full">
             <p className="text-lg font-medium mb-2">Cover Letter *</p>
             <textarea
-              placeholder="tell about yourself a bit"
-              className="h-60 p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full"
+              value={coverLetter}
+              {...register("coverLetter")}
+              onChange={(e) => setCoverLetter(e.target.value)}
+              placeholder="Tell about yourself a bit"
+              className="h-60 p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full text-black"
             />
           </div>
           <div className="w-full flex justify-center">
-            <button className="bg-[#2AABE1] rounded-full p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8 text-white">
+            <button
+              type="submit"
+              disabled={
+                fullName === "" ||
+                email === "" ||
+                phone === "" ||
+                coverLetter === "" ||
+                file === null
+              }
+              className="bg-[#2AABE1] rounded-full p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8 text-white"
+              style={{
+                opacity:
+                  fullName === "" ||
+                  email === "" ||
+                  phone === "" ||
+                  coverLetter === "" ||
+                  file === null
+                    ? "0.5"
+                    : "1",
+                cursor:
+                  fullName === "" ||
+                  email === "" ||
+                  phone === "" ||
+                  coverLetter === "" ||
+                  file === null
+                    ? "not-allowed"
+                    : "pointer",
+              }}
+            >
               Sumbit
             </button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
