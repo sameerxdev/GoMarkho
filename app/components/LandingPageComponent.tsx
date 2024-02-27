@@ -53,12 +53,12 @@ export default function LandingPageComponent(props: Props) {
       >
         <SwiperSlide>
           <div className="h-[calc(100vh)] w-[calc(100vw)] relative">
-            <Image
-              src="/heroBg1.gif"
-              alt="Background Video"
+            <video
+              src="/heroBg1.mp4"
+              autoPlay
+              loop
+              muted
               className="absolute inset-0 w-full h-full object-cover"
-              height={3000}
-              width={3000}
             />
             <div
               className="w-full h-full flex flex-col gap-2 xl:gap-5 justify-center px-[5%] xl:px-[8%] absolute z-20 text-white"
@@ -77,12 +77,12 @@ export default function LandingPageComponent(props: Props) {
         </SwiperSlide>
         <SwiperSlide>
           <div className="h-[calc(100vh)] w-[calc(100vw)] relative">
-            <Image
-              src="/heroBg2.gif"
-              alt="Background Video"
+            <video
+              src="/heroBg2.mp4"
+              autoPlay
+              loop
+              muted
               className="absolute inset-0 w-full h-full object-cover"
-              height={3000}
-              width={3000}
             />
             <div
               className="w-full h-full flex flex-col gap-2 xl:gap-5 justify-center px-[5%] xl:px-[8%] absolute z-20 text-white"
