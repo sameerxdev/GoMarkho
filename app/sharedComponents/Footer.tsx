@@ -10,13 +10,23 @@ interface FooterComponentInterface {}
 export default function Footer(props: FooterComponentInterface) {
   return (
     <div className="flex flex-col lg:flex-row gap-2 items-center justify-center w-full bg-[#020332] h-[calc(80vh)] lg:h-[calc(40vh)] px-[5%] xl:px-[8%] font-roboto">
-      <div className="w-full lg:w-[33%] flex justify-between items-center h-full lg:mr-4 mt-4 lg:mt-0">
+      <div className="w-full lg:w-[30%] flex justify-between items-center h-full lg:mr-4 mt-4 lg:mt-0">
         <div className="flex flex-col gap-3">
-          <p className="text-white font-semibold text-sm">Home</p>
-          <p className="text-white font-regular text-sm">Services</p>
-          <p className="text-white font-regular text-sm">About Us</p>
-          <p className="text-white font-regular text-sm">Careers</p>
-          <p className="text-white font-regular text-sm">Contact Us</p>
+          <Link href={"/landingPage"}>
+            <p className="text-white font-semibold text-sm">Home</p>
+          </Link>
+          <Link href={"/communicationSolutions"}>
+            <p className="text-white font-regular text-sm">Services</p>
+          </Link>
+          <Link href={"/aboutUs"}>
+            <p className="text-white font-regular text-sm">About Us</p>
+          </Link>
+          <Link href={"/careers"}>
+            <p className="text-white font-regular text-sm">Careers</p>
+          </Link>
+          <Link href={"/contactUs"}>
+            <p className="text-white font-regular text-sm">Contact Us</p>
+          </Link>
         </div>
         <div className="flex flex-col gap-2">
           <p className="text-white font-semibold text-sm">Get in touch</p>
@@ -38,7 +48,7 @@ export default function Footer(props: FooterComponentInterface) {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-[33%] flex justify-start items-center h-full relative">
+      <div className="w-full lg:w-[40%] flex justify-start items-center h-full relative">
         <Image
           src="/footerImage.webp"
           alt="Image"
@@ -76,7 +86,7 @@ export default function Footer(props: FooterComponentInterface) {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-[33%] flex justify-start items-start lg:items-center relative h-full">
+      <div className="w-full lg:w-[25%] flex justify-start items-start lg:items-center relative h-full">
         <div className="flex flex-col gap-3">
           <p className="text-white font-semibold text-sm font-roboto">
             Have any Questions

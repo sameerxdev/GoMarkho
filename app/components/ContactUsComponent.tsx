@@ -1,15 +1,12 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "../sharedComponents/Navbar";
-import CountUp from "react-countup";
 import "../styles/style.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import emailjs from "@emailjs/browser";
 import Footer from "../sharedComponents/Footer";
-import Map from "../sharedComponents/Map";
 
 interface Props {}
 
@@ -80,29 +77,30 @@ export default function ContactUsComponent(props: Props) {
 
   const faqsArray = [
     {
-      question: "How can GoMarkho enhance business communication?",
+      question: "How can GoMarkho enhance my business communication?",
+      answer:
+        "GoMarkho specializes in providing tailored VoIP solutions, software development, and intelligent automation. We empower businesses with cost-efficient communication systems, cutting-edge software, and streamlined workflows to enhance connectivity, operational efficiency, and overall growth.",
+    },
+    {
+      question:
+        "What sets GoMarkho apart from other communication solution providers?",
       answer:
         "What distinguishes GoMarkho is our commitment to innovation, customization, and seamless integration. We offer a comprehensive suite of services, combining expertise in VoIP, software development, and intelligent automation, ensuring that your business receives a unique, end-to-end solution tailored to your specific needs.",
     },
     {
-      question: "How can GoMarkho enhance business communication?",
+      question: "How does the implementation process work for your solutions?",
       answer:
-        "What distinguishes GoMarkho is our commitment to innovation, customization, and seamless integration. We offer a comprehensive suite of services, combining expertise in VoIP, software development, and intelligent automation, ensuring that your business receives a unique, end-to-end solution tailored to your specific needs.",
+        "Our implementation process is designed for simplicity and efficiency. We start with a thorough assessment of your requirements, followed by a seamless integration plan. Our team ensures a smooth transition, providing training and support to guarantee a successful implementation and optimal utilization of our solutions.",
     },
     {
-      question: "How can GoMarkho enhance business communication?",
+      question: "Can GoMarkho assist with ongoing support and maintenance?",
       answer:
-        "What distinguishes GoMarkho is our commitment to innovation, customization, and seamless integration. We offer a comprehensive suite of services, combining expertise in VoIP, software development, and intelligent automation, ensuring that your business receives a unique, end-to-end solution tailored to your specific needs.",
+        "Absolutely. GoMarkho is committed to providing continuous support. Our team is available to address any queries, troubleshoot issues, and ensure that your systems are always running at their best. We offer ongoing maintenance to keep your communication infrastructure reliable and up-to-date.",
     },
     {
-      question: "How can GoMarkho enhance business communication?",
+      question: "What industries does GoMarkho cater to?",
       answer:
-        "What distinguishes GoMarkho is our commitment to innovation, customization, and seamless integration. We offer a comprehensive suite of services, combining expertise in VoIP, software development, and intelligent automation, ensuring that your business receives a unique, end-to-end solution tailored to your specific needs.",
-    },
-    {
-      question: "How can GoMarkho enhance business communication?",
-      answer:
-        "What distinguishes GoMarkho is our commitment to innovation, customization, and seamless integration. We offer a comprehensive suite of services, combining expertise in VoIP, software development, and intelligent automation, ensuring that your business receives a unique, end-to-end solution tailored to your specific needs.",
+        "GoMarkho caters to a diverse range of industries, including but not limited to [list of specific industries]. Our customizable solutions are designed to meet the unique communication needs of businesses across various sectors, ensuring versatility and adaptability to specific industry requirements.",
     },
   ];
 
@@ -312,13 +310,20 @@ export default function ContactUsComponent(props: Props) {
       </div>
 
       <div className="py-[6%] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
-        <p
+        <h2
           className="text-black font-bold text-xl lg:text-3xl xl:text-4xl py-5"
           data-aos="fade-down"
         >
           Find us here
-        </p>
-        <Map />
+        </h2>
+        <div className="w-full h-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26564.417938139624!2d73.05693788253866!3d33.668762011132124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf9b9a26d10f%3A0x4673dd03bcb7dd01!2sGoMarkho!5e0!3m2!1sen!2s!4v1706017592671!5m2!1sen!2s"
+            title="GoMarkho location"
+            loading="lazy"
+            className="w-full h-[calc(70vh)] lg:h-[calc(50vh)] rounded-xl"
+          ></iframe>
+        </div>
       </div>
 
       <Footer />

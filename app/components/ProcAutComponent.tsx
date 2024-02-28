@@ -266,7 +266,7 @@ export default function ProcAutComponent(props: Props) {
         </div>
       </div>
 
-      <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
+      <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
           How can we help you?
         </p>

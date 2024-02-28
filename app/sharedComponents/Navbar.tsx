@@ -181,7 +181,13 @@ export default function Navbar(props: NavbarComponentInterface) {
               Services
               <span>
                 <IoMdArrowDropdown
-                  className="transition duration-400"
+                  onMouseEnter={() => {
+                    setIsServicesOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsServicesOpen(false);
+                  }}
+                  className="transition duration-400 hover:text-sky-500"
                   style={{
                     fontSize: "24px",
                     transform: isServicesOpen
@@ -193,7 +199,7 @@ export default function Navbar(props: NavbarComponentInterface) {
               </span>
               {isServicesOpen && (
                 <div
-                  className="absolute top-[28px] shadow rounded-lg bg-white w-56 p-3 flex flex-col gap-2 font-normal"
+                  className="absolute top-[25px] shadow rounded-lg bg-white w-56 p-3 flex flex-col gap-2 font-normal"
                   onMouseEnter={() => {
                     setIsServicesOpen(true);
                   }}

@@ -17,7 +17,6 @@ interface Props {}
 
 export default function LandingPageComponent(props: Props) {
   const [isHeaderShow, setIsHeaderShow] = useState(false);
-  const [counterOn, setCounterOn] = useState(false);
   let lastScrollTop = 0;
 
   const handleScroll = useCallback(() => {
@@ -69,9 +68,11 @@ export default function LandingPageComponent(props: Props) {
               <p className="text-lg xl:text-xl font-normal font-roboto">
                 One-stop provider for all communication.
               </p>
-              <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
-                Get in touch
-              </button>
+              <Link href={"/contactUs"}>
+                <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
+                  Get in touch
+                </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -93,9 +94,11 @@ export default function LandingPageComponent(props: Props) {
               <p className="text-lg xl:text-xl font-normal font-roboto">
                 Revolutionize the way you connect and collaborate.
               </p>
-              <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
-                Get in touch
-              </button>
+              <Link href={"/contactUs"}>
+                <button className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-44 mt-5 xl:mt-8">
+                  Get in touch
+                </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -140,16 +143,18 @@ export default function LandingPageComponent(props: Props) {
                 Effective & reliable communication is the secret that lies at
                 the heart of every successful business.
               </p>
-              <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
-                Learn More{" "}
-                <Image
-                  src="/arrowBlue.webp"
-                  alt="Icon"
-                  height={100}
-                  width={100}
-                  className="h-5 w-auto"
-                />
-              </p>
+              <Link href={"/communicationSolutions"}>
+                <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
+                  Learn More{" "}
+                  <Image
+                    src="/arrowBlue.webp"
+                    alt="Icon"
+                    height={100}
+                    width={100}
+                    className="h-5 w-auto"
+                  />
+                </p>
+              </Link>
             </div>
           </div>
           <div className="w-full flex justify-center items-center border-b border-[#f3f3f3] relative">
@@ -164,16 +169,18 @@ export default function LandingPageComponent(props: Props) {
                 Any business that aims to offer a personalized service needs to
                 cater to its own specific needs first.
               </p>
-              <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
-                Learn More{" "}
-                <Image
-                  src="/arrowBlue.webp"
-                  alt="Icon"
-                  height={100}
-                  width={100}
-                  className="h-5 w-auto"
-                />
-              </p>
+              <Link href={"/softwareDevelopment"}>
+                <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
+                  Learn More{" "}
+                  <Image
+                    src="/arrowBlue.webp"
+                    alt="Icon"
+                    height={100}
+                    width={100}
+                    className="h-5 w-auto"
+                  />
+                </p>
+              </Link>
             </div>
           </div>
           <div className="w-full flex justify-center items-center relative">
@@ -188,16 +195,18 @@ export default function LandingPageComponent(props: Props) {
                 You need to free your teams from drudgery of routine tasks to
                 enhance customers’ experience.
               </p>
-              <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
-                Learn More{" "}
-                <Image
-                  src="/arrowBlue.webp"
-                  alt="Icon"
-                  height={100}
-                  width={100}
-                  className="h-5 w-auto"
-                />
-              </p>
+              <Link href={"/processAutomation"}>
+                <p className="text-[#2AABE1] text-base font-bold flex items-center gap-2">
+                  Learn More{" "}
+                  <Image
+                    src="/arrowBlue.webp"
+                    alt="Icon"
+                    height={100}
+                    width={100}
+                    className="h-5 w-auto"
+                  />
+                </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -271,17 +280,19 @@ export default function LandingPageComponent(props: Props) {
             </div>
           </div>
           <div data-aos="fade-left">
-            <p className="text-base font-roboto 2xl:text-lg bg-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-white px-8 py-3 rounded-full flex gap-5 items-center">
-              About Us{" "}
-              <Image
-                src="/arrowWhite.webp"
-                alt="Icon"
-                height={100}
-                width={100}
-                className="h-auto w-4"
-                style={{ rotate: "180deg" }}
-              />
-            </p>
+            <Link href={"/aboutUs"}>
+              <p className="text-base font-roboto 2xl:text-lg bg-[#2AABE1] font-semibold transition duration-500 hover:scale-105 text-white px-8 py-3 rounded-full flex gap-5 items-center">
+                About Us{" "}
+                <Image
+                  src="/arrowWhite.webp"
+                  alt="Icon"
+                  height={100}
+                  width={100}
+                  className="h-auto w-4"
+                  style={{ rotate: "180deg" }}
+                />
+              </p>
+            </Link>
           </div>
         </div>
       </div>

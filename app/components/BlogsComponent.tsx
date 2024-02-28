@@ -60,7 +60,7 @@ export default function BlogsComponent(props: Props) {
             className="flex flex-col lg:flex-row gap-8 xl:gap-12"
             data-aos="fade-up"
           >
-            <div className="w-full lg:w-[50%] text-white bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+            <div className="w-full lg:w-[50%] text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
                 <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
@@ -79,50 +79,7 @@ export default function BlogsComponent(props: Props) {
                 <p className="text-[#2AABE1]">Read More</p>
               </div>
             </div>
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
-              <div>
-                <p className="text-sm font-roboto">November 15, 2022</p>
-              </div>
-              <div>
-                <p className="text-xl xl:text-2xl font-black">
-                  10 Top tips for making automation less time consuming
-                </p>
-              </div>
-              <div>
-                <p className="text-base font-roboto">
-                  here we show an overview of our main topic. like what top 10
-                  tips do in return of which is most easiest one, anything.
-                </p>
-              </div>
-              <div>
-                <p className="text-[#2AABE1]">Read More</p>
-              </div>
-            </div>
-          </div>
-          <div
-            className="flex flex-col lg:flex-row gap-8 xl:gap-12"
-            data-aos="fade-up"
-          >
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
-              <div>
-                <p className="text-sm font-roboto">November 15, 2022</p>
-              </div>
-              <div>
-                <p className="text-xl xl:text-2xl font-black">
-                  10 Top tips for making automation less time consuming
-                </p>
-              </div>
-              <div>
-                <p className="text-base font-roboto">
-                  here we show an overview of our main topic. like what top 10
-                  tips do in return of which is most easiest one, anything.
-                </p>
-              </div>
-              <div>
-                <p className="text-[#2AABE1]">Read More</p>
-              </div>
-            </div>
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+            <div className="w-full lg:w-[50%] text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
                 <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
@@ -146,7 +103,7 @@ export default function BlogsComponent(props: Props) {
             className="flex flex-col lg:flex-row gap-8 xl:gap-12"
             data-aos="fade-up"
           >
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
                 <p className="text-sm font-roboto">November 15, 2022</p>
               </div>
@@ -165,7 +122,50 @@ export default function BlogsComponent(props: Props) {
                 <p className="text-[#2AABE1]">Read More</p>
               </div>
             </div>
-            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+              <div>
+                <p className="text-sm font-roboto">November 15, 2022</p>
+              </div>
+              <div>
+                <p className="text-xl xl:text-2xl font-black">
+                  10 Top tips for making automation less time consuming
+                </p>
+              </div>
+              <div>
+                <p className="text-base font-roboto">
+                  here we show an overview of our main topic. like what top 10
+                  tips do in return of which is most easiest one, anything.
+                </p>
+              </div>
+              <div>
+                <p className="text-[#2AABE1]">Read More</p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="flex flex-col lg:flex-row gap-8 xl:gap-12"
+            data-aos="fade-up"
+          >
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
+              <div>
+                <p className="text-sm font-roboto">November 15, 2022</p>
+              </div>
+              <div>
+                <p className="text-xl xl:text-2xl font-black">
+                  10 Top tips for making automation less time consuming
+                </p>
+              </div>
+              <div>
+                <p className="text-base font-roboto">
+                  here we show an overview of our main topic. like what top 10
+                  tips do in return of which is most easiest one, anything.
+                </p>
+              </div>
+              <div>
+                <p className="text-[#2AABE1]">Read More</p>
+              </div>
+            </div>
+            <div className="w-full lg:w-[50%]  text-black bg-[#f9f9f9] hover:text-white hover:bg-[#020332] rounded-xl py-8 xl:py-10 px-5 xl:px-8 flex flex-col gap-6 xl:gap-8">
               <div>
                 <p className="text-sm font-roboto">November 15, 2022</p>
               </div>

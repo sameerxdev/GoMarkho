@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "../sharedComponents/Navbar";
@@ -43,41 +42,6 @@ export default function JobPostComponent(props: Props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
-
-  // const sendEmail = (e: any) => {
-  //   e.preventDefault();
-  //   const templateParams = {
-  //     fullName: fullName,
-  //     email: email,
-  //     phone: phone,
-  //     coverLetter: coverLetter,
-  //     file: file ? file.name : "No file selected",
-  //   };
-
-  //   emailjs
-  //     .send(
-  //       "service_cdv4l3k",
-  //       "template_zjs0x6j",
-  //       templateParams,
-  //       "IsXKkS1NCYyD6Rhrk"
-  //     )
-  //     .then(
-  //       () => {
-  //         alert("Your email has been sent successfully.");
-  //         if (formRef.current) {
-  //           formRef.current.reset();
-  //         }
-  //         setFullName("");
-  //         setEmail("");
-  //         setPhone("");
-  //         setCoverLetter("");
-  //         setFile(null);
-  //       },
-  //       (error) => {
-  //         alert("An error occurred while sending the email.");
-  //       }
-  //     );
-  // };
 
   const handleSendEmail = async (data: any) => {
     console.log(data);
@@ -314,12 +278,12 @@ export default function JobPostComponent(props: Props) {
         </form>
       </div>
 
-      <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[10%] flex flex-col items-center justify-center">
+      <div className="h-[calc(60vh)] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
         <p className="text-3xl xl:text-5xl font-bold" data-aos="fade-down">
           How can we help you?
         </p>
         <p
-          className="font-regular text-lg my-5 text-center font-roboto"
+          className="font-regular text-lg my-3 text-center font-roboto"
           data-aos="fade-down"
         >
           Are you ready to push boundaries and explore new frontiers of
@@ -327,7 +291,7 @@ export default function JobPostComponent(props: Props) {
         </p>
         <Link href={"/lwt"}>
           <button
-            className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 xl:mt-8 text-white"
+            className="bg-[#2AABE1] rounded p-4 font-bold text-base xl:text-lg w-56 mt-5 text-white"
             data-aos="fade-up"
           >
             Let&apos;s work Together
