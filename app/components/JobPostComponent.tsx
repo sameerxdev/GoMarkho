@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "../sharedComponents/Navbar";
 import Footer from "../sharedComponents/Footer";
+import { EmailTemplate } from "../sharedComponents/EmailTemplate";
+import { Resend } from "resend";
 
 interface Props {}
 
@@ -20,7 +22,7 @@ export default function JobPostComponent(props: Props) {
   const [isHeaderShow, setIsHeaderShow] = useState(false);
   let lastScrollTop = 0;
 
-  const formRef = useRef<HTMLFormElement>(null);
+  // const formRef = useRef<HTMLFormElement>(null);
 
   const handleScroll = useCallback(() => {
     const st = window.pageYOffset;
@@ -43,30 +45,81 @@ export default function JobPostComponent(props: Props) {
     };
   }, [handleScroll]);
 
-  const handleSendEmail = async (data: any) => {
-    console.log(data);
-    try {
-      console.log("Sending email");
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      console.log("Response:", response);
+  // const handleSendEmail = async (data: any) => {
+  //   console.log(data);
+  //   try {
+  //     console.log("Sending email");
+  //     const response = await fetch("/api/send-email", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  //     console.log("Response:", response);
 
-      if (response.ok) {
-        console.log(data, "Email sent successfully");
-        reset();
-      } else {
-        throw new Error("Failed to send email");
-      }
-    } catch (error: any) {
-      console.error("Email sending error:", error);
-      // Handle the error, e.g., show an error message
+  //     if (response.ok) {
+  //       console.log(data, "Email sent successfully");
+  //       reset();
+  //     } else {
+  //       throw new Error("Failed to send email");
+  //     }
+  //   } catch (error: any) {
+  //     console.error("Email sending error:", error);
+  //     // Handle the error, e.g., show an error message
+  //   }
+  // };
+
+  // const handleSendEmail = async () => {
+  //   try {
+  //     const response = await fetch("/api/send", {
+  //       method: "POST",
+  //     });
+
+  //     if (response) {
+  //       console.log(response, "Email sent successfully");
+  //     } else {
+  //       console.error("Failed to send email");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //   }
+  // };
+
+  const resend = new Resend("re_FegWDQtP_BAA71Lch8dfakge28mXPSA8H");
+  async function POST() {
+    try {
+      const data = await resend.emails.send({
+        from: "Job Applicant <onboarding@resend.dev>",
+        to: ["yevoliw139@mcuma.com"],
+        subject: "Hello world",
+        text: "Hello world",
+        react: EmailTemplate({
+          fullName: fullName,
+          email: email,
+          phone: phone,
+          resume: resumeContent,
+          coverLetter: coverLetter,
+        }),
+      });
+      console.log(data);
+      // return Response.json(data);
+    } catch (error) {
+      console.log(error);
+      // return Response.json({ error });
     }
-  };
+  }
+
+  const resumeContent = file ? (
+    <p>
+      Resume:{" "}
+      <a href={URL.createObjectURL(file)} download={file.name}>
+        Download Resume
+      </a>
+    </p>
+  ) : (
+    <p>Resume not provided</p>
+  );
 
   return (
     <div className="overflow-x-hidden font-jakarta">
@@ -178,11 +231,9 @@ export default function JobPostComponent(props: Props) {
       </div>
 
       <div className="w-[calc(100vw)] relative px-[5%] xl:px-[8%] py-[8%] flex flex-col items-center justify-center">
-        <form
-          ref={formRef}
+        <div
           className="w-full shadow-2xl rounded-2xl px-5 lg:px-8 py-12 bg-[#020332] text-white"
           // onSubmit={(e) => sendEmail(e)}
-          onSubmit={handleSubmit(handleSendEmail)}
           data-aos="fade-up"
         >
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 mb-4 lg:mb-8">
@@ -190,7 +241,7 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Full name *</p>
               <input
                 type="text"
-                {...register("fullName")}
+                // {...register("fullName")}
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="Enter Full Name"
@@ -201,7 +252,7 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Your email *</p>
               <input
                 type="email"
-                {...register("email")}
+                // {...register("email")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Email"
@@ -224,7 +275,7 @@ export default function JobPostComponent(props: Props) {
               <p className="text-lg font-medium mb-2">Phone *</p>
               <input
                 type="text"
-                {...register("phone")}
+                // {...register("phone")}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Enter Phone"
@@ -236,7 +287,7 @@ export default function JobPostComponent(props: Props) {
             <p className="text-lg font-medium mb-2">Cover Letter *</p>
             <textarea
               value={coverLetter}
-              {...register("coverLetter")}
+              // {...register("coverLetter")}
               onChange={(e) => setCoverLetter(e.target.value)}
               placeholder="Tell about yourself a bit"
               className="h-60 p-3 outline-none border-2 border-[#f3f3f3] rounded-lg w-full text-black"
@@ -244,7 +295,7 @@ export default function JobPostComponent(props: Props) {
           </div>
           <div className="w-full flex justify-center">
             <button
-              type="submit"
+              onClick={() => POST()}
               disabled={
                 fullName === "" ||
                 email === "" ||
@@ -275,7 +326,7 @@ export default function JobPostComponent(props: Props) {
               Sumbit
             </button>
           </div>
-        </form>
+        </div>
       </div>
 
       <div className="h-[calc(60vh)] w-[calc(100vw)] relative px-[5%] xl:px-[8%] flex flex-col items-center justify-center">
